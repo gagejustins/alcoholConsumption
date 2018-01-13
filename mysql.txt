@@ -1,0 +1,10 @@
+#Create table
+CREATE TABLE shipping (country VARCHAR(255), 
+  beer SMALLINT, 
+  spirits SMALLINT, 
+  wine SMALLINT, 
+  alcohol FLOAT, 
+  continent VARCHAR(255))
+
+#Load and insert data
+LOAD DATA LOCAL INFILE '~/Desktop/Data_Science/shipping/final.csv
