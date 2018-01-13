@@ -4,7 +4,10 @@ CREATE TABLE shipping (country VARCHAR(255),
   spirits SMALLINT, 
   wine SMALLINT, 
   alcohol FLOAT, 
-  continent VARCHAR(255))
+  continent VARCHAR(255));
 
 #Load and insert data
-LOAD DATA LOCAL INFILE '~/Desktop/Data_Science/shipping/final.csv
+LOAD DATA LOCAL INFILE '~/Desktop/Data_Science/alcohol/drinks.csv' 
+INTO TABLE alcohol
+COLUMNS TERMINATED BY ',';
+
