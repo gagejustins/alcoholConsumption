@@ -11,3 +11,49 @@ LOAD DATA LOCAL INFILE '~/Desktop/Data_Science/alcohol/drinks.csv'
 INTO TABLE alcohol
 COLUMNS TERMINATED BY ',';
 
+#Remove header row
+DELETE FROM alcohol 
+LIMIT 1;
+
+#Adjust continents for USA and Canada to North America
+UPDATE alcohol
+SET continent = 'NA'
+WHERE country = 'USA' OR country = 'Canada';
+
+#Which countries drink the most beer?
+SELECT country, beer 
+FROM alcohol 
+ORDER BY beer DESC 
+LIMIT 10;
+
+#Which continents drink the most beer?
+SELECT continent, AVG(beer)
+FROM alcohol
+GROUP BY continent
+ORDER BY AVG(beer) DESC;
+
+#Which countries drink the most wine?
+SELECT country, wine
+FROM alcohol
+ORDER BY wine DESC
+LIMIT 10;
+
+#Which continents drink the most wine?
+SELECT continent, AVG(wine)
+FROM alcohol
+GROUP BY continent
+ORDER BY AVG(wine) DESC;
+
+#Which countries drink the most spirits?
+
+
+
+
+
+
+
+
+
+
+
+
