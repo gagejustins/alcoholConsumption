@@ -45,8 +45,16 @@ GROUP BY continent
 ORDER BY AVG(wine) DESC;
 
 #Which countries drink the most spirits?
+SELECT country, spirits
+FROM alcohol
+ORDER BY spirits DESC
+LIMIT 10;
 
-
+#Which continents drink the most spirits?
+SELECT continent, AVG(spirits)
+FROM alcohol
+GROUP BY continent
+ORDER BY AVG(spirits) DESC;
 
 
 
