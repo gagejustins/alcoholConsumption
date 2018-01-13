@@ -56,12 +56,14 @@ FROM alcohol
 GROUP BY continent
 ORDER BY AVG(spirits) DESC;
 
+#Which countries drink the most pure alcohol?
+SELECT country, alcohol
+FROM alcohol
+ORDER BY alcohol DESC
+LIMIT 10;
 
-
-
-
-
-
-
-
-
+#Which continents drink the most pure alcohol?
+SELECT continent, AVG(alcohol)
+FROM alcohol
+GROUP BY continent
+ORDER BY AVG(alcohol) DESC;
